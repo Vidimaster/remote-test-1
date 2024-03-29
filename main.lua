@@ -8,3 +8,5 @@ local function closestPointOnLineSegment(
     t = math.min(1, math.max(0, t))
     return a_x + t*ab_x, a_y + t*ab_y, a_z + t*ab_z
 end
+
+local collisions = {}
