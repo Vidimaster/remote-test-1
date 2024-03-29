@@ -1,3 +1,11 @@
+local vectors = require(g3d.path .. ".vectors")
+local fastSubtract = vectors.subtract
+local vectorAdd = vectors.add
+local vectorCrossProduct = vectors.crossProduct
+local vectorDotProduct = vectors.dotProduct
+local vectorNormalize = vectors.normalize
+local vectorMagnitude = vectors.magnitude
+
 local function closestPointOnLineSegment(
         a_x,a_y,a_z, -- point one of line segment
         b_x,b_y,b_z, -- point two of line segment
