@@ -20,5 +20,19 @@ local function closestPointOnLineSegment(
 end
 
 
+function collisions.rayIntersection(verts, transform, src_x, src_y, src_z, dir_x, dir_y, dir_z)
+    return findClosest(transform, verts, triangleRay, src_x, src_y, src_z, dir_x, dir_y, dir_z)
+end
 
+function collisions.isPointInside(verts, transform, x, y, z)
+    return findAny(transform, verts, triangleRay, x, y, z, 0, 0, 1)
+end
+
+function collisions.sphereIntersection(verts, transform, src_x, src_y, src_z, radius)
+    return findClosest(transform, verts, triangleSphere, src_x, src_y, src_z, radius)
+end
+
+function collisions.closestPoint(verts, transform, src_x, src_y, src_z)
+    return findClosest(transform, verts, trianglePoint, src_x, src_y, src_z)
+end
 
